@@ -1,0 +1,18 @@
+{% extends 'personal_portfolio/base.html' %}
+{% block title %}blogs{% endblock title %}
+{% block content %}
+<div class="blog_space">
+{% for i in form%}
+    <div class="card">
+        <div class="title">
+            <span class="title-text"><a href="{% url 'blog:detail' i.id %}">{{ i.title }}</a></span>
+        </div>
+        <div class="title-line"></div>
+        <p class="content">{{ i.description |truncatechars:200 }}</p>
+        <div class="date">{{ i.time }}</div>
+    </div>
+{% endfor %}
+</div>
+
+
+{% endblock content %}

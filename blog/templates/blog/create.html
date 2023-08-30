@@ -1,0 +1,13 @@
+{% extends 'personal_portfolio/base.html' %}
+
+{% block title %}
+add block
+{% endblock %}
+
+{% block content %}
+    <form method="post", enctype="multipart/form-data">
+    {% csrf_token%}
+    {{ form.as_p }}
+    <button type="submit"> ADD</button>
+    </form>
+{% endblock content %}

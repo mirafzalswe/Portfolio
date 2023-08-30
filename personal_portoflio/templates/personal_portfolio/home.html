@@ -1,0 +1,41 @@
+{% extends 'personal_portfolio/base.html' %}
+{% block title %}
+    HOME
+{% endblock title %}
+{% block content %}
+{% load static %}
+    <div class="portfolio">
+        <div class="chap">
+   <img src="{% static 'profile/mirafzal.png' %}"  class="rasm">
+
+        </div>
+        <div class="ong">
+            <div class="text">
+            <h3>Bakhodirov Mirafzal</h3>
+             Software <span>engineer</span>
+                <div class="column">
+                    <div class="linklar br">
+                        <a href="https://github.com/mirafzal114">GitHub</a>  <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="linklar ikki">
+                        <a href="https://www.linkedin.com/in/mirafzal-bakhodirov-54399b286/">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="linklar">
+                        <a href='mailto:mirafzaaal2609@gmail.com'>Gmail <i class="fa-regular fa-envelope"></i></a>
+                    </div>
+
+                </div>
+                <h5>I am a pet programmer I am interested in programming I am very fond of I want to grow and develop in the field of programming and create something useful for people</h5>
+            </div>
+        </div>
+        <div class="past"></div>
+    </div>
+
+
+{#    {% for i in form %}#}
+{#        <h3>{{ i.title }}</h3>#}
+{#        <p>{{ i.description }}</p>#}
+{#        <img src="{{ i.image.url }}" alt="">#}
+{#    {% endfor %}#}
+<script src="https://kit.fontawesome.com/081c4004bc.js" crossorigin="anonymous"></script>
+{% endblock content %}

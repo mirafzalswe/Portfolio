@@ -1,0 +1,27 @@
+{% extends 'personal_portfolio/base.html' %}
+{% block title  %} Projects {% endblock title %}
+{% block content %}
+
+    <div class="area">
+    {% for i in form %}
+        <div class="card_pr">
+            <div class="ong_or">
+                <div class="img">
+                    <img src="{{ i.image.url }}" alt="">
+                </div>
+            </div>
+            <div class="chap_pr">
+                <div class="title_pr">
+                    <h2>{{ i.title }}</h2>
+                 </div>
+                <div class="decrip_pr">
+                    <p>{{ i.description|truncatechars:120 }}</p>
+                </div>
+                 <a href="" class="url_pr">GitHub</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock content %}
+

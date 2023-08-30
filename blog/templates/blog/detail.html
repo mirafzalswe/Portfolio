@@ -1,0 +1,31 @@
+{% extends 'personal_portfolio/base.html' %}
+{% block title %}
+salom
+{% endblock title %}
+
+
+{% block content %}
+{#    <img src="{{ blog.image.url }}" alt="">#}
+{#    <h3>{{ blog.title }} </h3>#}
+{#    <p>{{ blog.description }}</p>#}
+{#    <p>{{ blog.content }}</p>#}
+{#    #}
+
+    <div class="blogcha">
+    <div class="blogchani">
+        <div class="rasim">
+            <img src="{{ blog.image.url }}" alt="">
+        </div>
+        <div class="title-blog">
+            <h3>{{ blog.title }}</h3>
+        </div>
+        <div class="content">
+            <p>{{ blog.description }}</p>
+        </div>
+        <div class="data">
+            {{ blog.time }}
+        </div>
+    </div>
+    </div>
+
+{% endblock content %}

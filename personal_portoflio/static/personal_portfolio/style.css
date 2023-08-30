@@ -1,0 +1,696 @@
+
+.hoverable {
+  display: inline-block;
+  backface-visibility: hidden;
+  vertical-align: middle;
+  position: relative;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  tranform: translateZ(0);
+  transition-duration: 0.1s;
+  transition-property: transform;
+}
+
+.hoverable:before {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  content: "";
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+  /* W3C */
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.hoverable:hover, .hoverable:active, .hoverable:focus {
+  transform: translateY(-5px);
+}
+
+.hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before {
+  opacity: 1;
+  transform: translateY(-5px);
+
+}
+
+@keyframes bounce-animation {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration: 2s;
+}
+
+/*everything below here is just setting up the page, so dont worry about it */
+@media (min-width: 768px) {
+  .navbar {
+    text-align: center !important;
+    float: none;
+    display: flex;
+
+  }
+}
+.container-fluid{
+  /*background-color: red;*/
+  display: flex;
+  width: 100%;
+
+}
+/* Убрать точку у элементов списка */
+ul {
+  list-style: none;
+}
+
+/* Добавить свою иконку перед элементами списка */
+ul.custom-list {
+  list-style: none;
+  padding-left: 20px; /* Добавьте отступ для компенсации */
+}
+
+ul.custom-list li::before {
+  content: "\2022";
+  margin-right: 10px;
+}
+.container-fluid{
+  text-align: center  ;
+  align-items: center;
+}
+
+.logo{
+  width: 30%;
+  align-items: center;
+  text-align: center;
+  height: 60px ;
+  font-size: 30px;
+
+}
+
+.navbar-nav{
+  display: flex;
+  text-align: center;
+  width: 70%;
+  height: 60px;
+  justify-content: flex-end;
+  margin-right: 40px;;
+}
+body {
+  background-color: black;
+  font-weight: 600;
+  text-align: center !important;
+  color: white;
+}
+
+nav {
+  background: none !important;
+  text-transform: uppercase;
+}
+nav li {
+  margin-left: 3px;
+  margin-right: 3em;
+  text-align: center;
+}
+nav li a {
+  transition: 0.5s color ease-in-out;
+}
+
+.linklar ikki:hover{
+
+}
+.navbar-inverse{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.page-title {
+  opacity: 0.75 !important;
+}
+.hoverable{
+  color:white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.portfolio{
+  display: flex;
+  /*background-color: blue;*/
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+}
+.chap {
+  /*background-color: salmon;*/
+  width: 50%;
+}
+
+.ong{
+  /*background-color: yellow;*/
+  width: 50%;
+}
+.span{
+  color:red;
+}
+.text{
+  text-align: center;
+  align-items: center;
+}
+
+
+.text {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 15px;
+  margin-bottom: 300px;;
+
+}
+
+
+.ong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 400px;
+}
+
+.text {
+    text-align: center;
+    margin: 0 20px;
+  margin-bottom: 300px;
+}
+
+.text h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.text span {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  text-align: center;
+  /*justify-content: center;*/
+  justify-content: space-evenly;
+}
+
+
+.text h5 {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #777;
+}
+.linklar {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.linklar a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.linklar i {
+    font-size: 18px;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.linklar a:hover,
+.linklar i:hover {
+    color: #ff6b6b;
+    transform: scale(1.05);
+
+}
+/* Добавьте следующие стили для адаптивности на мобильных устройствах */
+@media (max-width: 768px) {
+  .portfolio {
+    flex-direction: column; /* Изменяем направление флекс-контейнера */
+    height: auto; /* Убираем фиксированную высоту, чтобы контент занимал столько места, сколько нужно */
+  }
+  .chap,
+  .ong {
+    width: 100%; /* Растягиваем блоки на всю ширину */
+  }
+  .text {
+    margin: 20px; /* Увеличиваем внешний отступ */
+  }
+  .ong {
+    margin-bottom: 0; /* Убираем отступ снизу */
+  }
+}
+/* Стили для кнопки гамбургера */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Стили для активного состояния навбара на мобильных устройствах */
+#navbar.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    transition: 0.4s;
+}
+
+#navbar.active li {
+    padding: 10px;
+    width: 100%;
+}
+
+#navbar.active a {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+#navbar.active a:hover {
+    color: #ff5e5e;
+}
+
+/* Медиа-запрос для показа/скрытия кнопки гамбургера и навбара */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        transition: 0.4s;
+    }
+
+    #navbar.active {
+        display: flex !important;
+    }
+
+    #navbar.active li {
+        padding: 10px;
+        width: 100%;
+    }
+
+    #navbar.active a {
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    #navbar.active a:hover {
+        color: #ff5e5e;
+    }
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#navbar.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    transition: 0.4s;
+}
+
+#navbar.active li {
+    padding: 10px;
+    width: 100%;
+}
+
+#navbar.active a {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+#navbar.active a:hover {
+    color: #ff5e5e;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        transition: 0.4s;
+    }
+
+    #navbar.active {
+        display: flex !important;
+    }
+
+    #navbar.active li {
+        padding: 10px;
+        width: 100%;
+    }
+
+    #navbar.active a {
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    #navbar.active a:hover {
+        color: #ff5e5e;
+    }
+}
+
+
+
+
+
+
+
+/*blog css dizain */
+
+
+
+.blog_space {
+    /*margin-top: 100px;*/
+    height: 100%;
+    width: 100%;
+    /*background-color: #f0f0f0;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Добавленное свойство */
+
+
+}
+
+.card {
+    margin-top: 100px;
+    background-color: #444;
+    width: calc(50% - 40px); /* Изменено свойство */
+    max-width: 600px;
+    padding: 23px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+    transition: transform 0.3s ease;
+    height: 170px;
+    margin-right: 40px;
+    /*margin-bottom: 20px; !* Добавленное свойство *!*/
+}
+
+.card:hover {
+    transform: scale(1.05);
+        box-shadow: 0 4px 8px #ff5e5e;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title-text a {
+    text-decoration: none;
+    font-size: 25px;
+
+     color: #ff5e5e;
+}
+
+.title-line {
+    width: 100%;
+    height: 1px;
+    background-color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.content {
+    color: #ddd;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.date {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/*detail dizain*/
+
+.blogcha {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.blogchani {
+  margin-top: 30px;
+  border: 1px solid #ff5e5e;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px; /* Увеличили максимальную ширину */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.rasim img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.title-blog h3 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #ff5e5e;
+}
+
+
+.content p {
+  margin: 10px 0;
+  color: #fdfdfd;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.data {
+  margin-top: 10px;
+  color: #888;
+  font-size: 14px;
+}
+
+.blogchani:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title-blog h3:hover {
+  color: #ff6600;
+}
+
+
+
+
+
+/*projects dizain*/
+.area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.card_pr {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px #8c4848;
+    margin: 20px;
+    padding: 20px;
+    width: 70%;
+    max-width: 800px;
+    display: flex;
+    animation: fadeInUp 0.5s ease;
+    height: 300px;
+    transition: transform 0.3s ease;
+}
+.card_pr:hover{
+    transform: scale(1.05);
+    box-shadow: 0 5px 9px #ff5e5e;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.img {
+    /*width: 40%;*/
+    max-height: 300px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ong_or {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.chap_pr {
+    flex: 1;
+    padding: 0 20px;
+    width: 50%;
+
+
+}
+
+.title_pr {
+    height: 20%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff5e5e;
+    line-height: 1.5;
+
+}
+
+.decrip_pr {
+    height: 60% ;
+    color: #f3eabe;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 18px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    /*background-color: red;*/
+}
+
+.area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.area::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.url_pr{
+    /*color:#ff5e5e;*/
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.url_pr:hover{
+    font-size: 22px;
+    color: #b6e33c;
+    transform: scale(1.05);
+}
+
+
+/*gamburger */
+
+.burger_mim{
+   display: none;
+
+    color:white;
+}
+
+@media (max-width: 768px) {
+    .burger_mim{
+        display: block;
+        font-size: 40px;
+    }
+}
